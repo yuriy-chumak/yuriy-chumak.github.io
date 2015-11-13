@@ -97,7 +97,8 @@ Copyright (c) 2014, 2015 Yuriy Chumak\n\
          terminal.focus();
          socket.write("GET /ol HTTP/1.0"         + "\x0D\x0A");
          socket.write("Host: iaaa.dlinkddns.com" + "\x0D\x0A");
-         socket.writeFlush("\x0D\x0A");
+         socket.write("\x0D\x0A");
+         socket.flush();
          terminal.resume();
       }
       function dataHandler(data) {
